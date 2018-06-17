@@ -7,15 +7,15 @@ FIRE Information
 
      Ticker: FIRE           | PoW/PoS         | Algorithm:X15    |     Nodes         |     Ports
     :----------------------:|:---------------:|:----------------:|:-----------------:|:-------------:
-     Genesis Block:         | 2014-06-28      | 03:53:29         |   50.83.9.153     |     49698 
-     Max POW:               | 97,496  FIRE    | -                |   24.85.114.101   |     49697
-     Last PoW Block:        | 2014-07-01      | 01:35:53         |   162.220.166.125 |
-     PoS Starts on Block:   | 4,000           | > 4 Days         |   78.46.92.72     |
-     First PoS Block:       | 2014-07-01      | 01:37:03         |   91.192.218.148  |
-     PoS Annual Interest:   | 1%              | -                |    104.236.167.70 |
-     PoS Minimum Stake Age: | 1 Hours         | 15 Blocks        |   188.113.205.212 |
-     Total:                 | 150,000 FIRE    | Years            |   188.134.72.213  |
-                            |                 |                  |   37.110.214.68   |
+     Genesis Block:         | 2014-06-28      | 03:53:29         |   50.83.11.14     |     49698 
+     Max POW:               | 97,496  FIRE    | -                |   78.46.92.72     |     49697
+     Last PoW Block:        | 2014-07-01      | 01:35:53         |   213.230.101.5   |
+     PoS Starts on Block:   | 4,000           | > 4 Days         |                   |
+     First PoS Block:       | 2014-07-01      | 01:37:03         |                   |
+     PoS Annual Interest:   | 1%              | -                |                   |
+     PoS Minimum Stake Age: | 1 Hours         | 15 Blocks        |                   |
+     Total:                 | 150,000 FIRE    | Years            |                   |
+                            |                 |                  |                   |
 
 Forums
 ====================
@@ -23,11 +23,10 @@ Forums
 
 Block Explorers
 ====================
-[![CryptoID](https://chainz.cryptoid.info/theme/cryptoID64.png)](https://chainz.cryptoid.info/fire/)
 
 Faucets
 ====================
-<a href="http://cryptoguru.tk/Faucet/index.php?Currency=FIRE"><img src="http://www.multifaucet.tk/images/multifaucet.png" align="center" height="48" width="48" ></a>
+
 
 Social Media
 ====================
