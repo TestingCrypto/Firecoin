@@ -27,18 +27,18 @@ class CRequestTracker;
 class CNode;
 
 static const int LAST_POW_BLOCK = 4000;
-
-static const unsigned int MAX_BLOCK_SIZE = 1000000;
-static const unsigned int MAX_BLOCK_SIZE_GEN = MAX_BLOCK_SIZE/2;
-static const unsigned int MAX_BLOCK_SIGOPS = MAX_BLOCK_SIZE/50;
-static const unsigned int MAX_ORPHAN_TRANSACTIONS = MAX_BLOCK_SIZE/100;
-static const unsigned int DEFAULT_MAX_ORPHAN_BLOCKS = 750;
-static const unsigned int MAX_INV_SZ = 50000;
-static const int64_t MIN_TX_FEE = 1000;
-static const int64_t MIN_RELAY_TX_FEE = MIN_TX_FEE;
-static const int64_t MAX_MONEY = 150000 * COIN;
+static const unsigned int MAX_BLOCK_SIZE = 1000000; // The maximum allowed size for a serialized block, in bytes (network rule)
+static const unsigned int MAX_BLOCK_SIZE_GEN = MAX_BLOCK_SIZE/2; // The maximum size for mined blocks
+static const unsigned int MAX_BLOCK_SIGOPS = MAX_BLOCK_SIZE/50; // The maximum allowed number of signature check operations in a block (network rule)
+static const unsigned int MAX_ORPHAN_TRANSACTIONS = MAX_BLOCK_SIZE/100; // The maximum number of orphan transactions kept in memory
+static const unsigned int DEFAULT_MAX_ORPHAN_BLOCKS = 750; // The maximum number of entries in an 'inv' protocol message
+static const unsigned int MAX_INV_SZ = 50000; // Fees smaller than this (in satoshi) are considered zero fee (for transaction creation)
+static const int64_t MIN_TX_FEE = 1000; // Fees smaller than this (in satoshi) are considered zero fee (for relaying)
+static const int64_t MIN_RELAY_TX_FEE = MIN_TX_FEE; // No amount larger than this is valid
+static const int64_t MAX_MONEY = 150000 * COIN; // Base Rate for Proof of Stake Reward
 static const int64_t COIN_YEAR_REWARD = 1 * CENT; // 1% per year
 static const int64_t MAX_MINT_PROOF_OF_STAKE = 0.01 * COIN;	// 1% annual interest
+static const int64 MIN_TXOUT_AMOUNT = MIN_TX_FEE; 
 static const int MODIFIER_INTERVAL_SWITCH = 4000;
 
 inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
