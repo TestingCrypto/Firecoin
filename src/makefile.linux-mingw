@@ -2,8 +2,8 @@
 # Distributed under the MIT/X11 software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-TARGET_PLATFORM:=i686
-#TARGET_PLATFORM:=x86_64
+#TARGET_PLATFORM:=i686
+TARGET_PLATFORM:=x86_64
 
 DEPSDIR:=/usr/$(TARGET_PLATFORM)-w64-mingw32
 CC:=$(TARGET_PLATFORM)-w64-mingw32-gcc
@@ -11,7 +11,7 @@ CXX:=$(TARGET_PLATFORM)-w64-mingw32-g++
 RANLIB=$(TARGET_PLATFORM)-w64-mingw32-ranlib
 STRIP=$(TARGET_PLATFORM)-w64-mingw32-strip
 
-USE_UPNP:=0
+USE_UPNP:=1
 USE_IPV6:=1
 
 INCLUDEPATHS= \
