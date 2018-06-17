@@ -36,14 +36,14 @@ int64_t GetWeight(int64_t nIntervalBeginning, int64_t nIntervalEnd)
     return min(nIntervalEnd - nIntervalBeginning - nStakeMinAge, (int64_t)nStakeMaxAge);
 }
 
-// Get time weight 2 - This is added for informational purposes since staking takes 8.8 days min approx. because of bug
+// Get time weight 2 - This is added for informational purposes since staking takes 1 day min approx. because of bug
 int64_t GetWeight2(int64_t nIntervalBeginning, int64_t nIntervalEnd)
 {
     // Kernel hash weight starts from 0 at the min age
     // this change increases active coins participating the hash and helps
     // to secure the network when proof-of-stake difficulty is low
 
-int64_t nStakeMinAgeV2 = 60 * 60 * 24 * 1;
+int64_t nStakeMinAgeV2 = 60 * 60 * 24 * 0.25; //change from 1 day to 6 hours
     return min(nIntervalEnd - nIntervalBeginning - nStakeMinAgeV2, (int64_t)nStakeMaxAge);
 }
 
