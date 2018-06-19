@@ -2,35 +2,31 @@ TEMPLATE = app
 TARGET = firecoin-qt
 VERSION = 4.0.1
 INCLUDEPATH += src src/json src/qt
-QT += core gui network
-DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE __STDC_FORMAT_MACROS __STDC_LIMIT_MACROS
+DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
 CONFIG += no_include_pwd
 CONFIG += thread
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 lessThan(QT_MAJOR_VERSION, 5): CONFIG += static
 QMAKE_CXXFLAGS = -fpermissive
-#QMAKE_CC=clang
-#QMAKE_CXX=clang++
 
 greaterThan(QT_MAJOR_VERSION, 4) {
     QT += widgets
     DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0
 }
 
-linux {
-    SECP256K1_LIB_PATH = /usr/local/lib
-    SECP256K1_INCLUDE_PATH = /usr/local/include
-}
-
-freebsd-g++: QMAKE_TARGET.arch = $$QMAKE_HOST.arch
-linux-g++: QMAKE_TARGET.arch = $$QMAKE_HOST.arch
-linux-g++: QMAKE_TARGET.arch = $$QMAKE_HOST.arch
-linux-g++-32: QMAKE_TARGET.arch = i686
-linux-g++-32: QMAKE_TARGET.arch = i686
-linux-g++-64: QMAKE_TARGET.arch = x86_64
-linux-g++-64: QMAKE_TARGET.arch = x86_64
-win32-g++-cross: QMAKE_TARGET.arch = $$TARGET_PLATFORM
-win32-g++-cross: QMAKE_TARGET.arch = $$TARGET_PLATFORM
+BOOST_LIB_SUFFIX=-mgw48-mt-s-1_67
+BOOST_INCLUDE_PATH=C:/deps/boost_1_67_0
+BOOST_LIB_PATH=C:/deps/boost_1_67_0/stage/lib
+BDB_INCLUDE_PATH=C:/deps/db-4.8.30.NC/build_unix
+BDB_LIB_PATH=C:/deps/db-4.8.30.NC/build_unix
+OPENSSL_INCLUDE_PATH=C:/deps/openssl-1.1.0h/include
+OPENSSL_LIB_PATH=C:/deps/openssl-1.1.0h
+MINIUPNPC_INCLUDE_PATH=C:/deps
+LIBPNG_INCLUDE_PATH=C:/deps/libpng-1.6.34
+LIBPNG_LIB_PATH=C:/deps/libpng-1.6.34/.libs
+MINIUPNPC_LIB_PATH=C:/deps/miniupnpc
+QRENCODE_INCLUDE_PATH=C:/deps/qrencode-4.0.2
+QRENCODE_LIB_PATH=C:/deps/qrencode-4.0.2/.libs
 
 # for boost 1.37, add -mt to the boost libraries
 # use: qmake BOOST_LIB_SUFFIX=-mt
@@ -41,20 +37,6 @@ win32-g++-cross: QMAKE_TARGET.arch = $$TARGET_PLATFORM
 # Dependency library locations can be customized with:
 #    BOOST_INCLUDE_PATH, BOOST_LIB_PATH, BDB_INCLUDE_PATH,
 #    BDB_LIB_PATH, OPENSSL_INCLUDE_PATH and OPENSSL_LIB_PATH respectively
-
-BOOST_LIB_SUFFIX=-mgw48-mt-s-1_55
-BOOST_INCLUDE_PATH=C:/deps/boost_1_55_0
-BOOST_LIB_PATH=C:/deps/boost_1_55_0/stage/lib
-BDB_INCLUDE_PATH=C:/deps/db-4.8.30.NC/build_unix
-BDB_LIB_PATH=C:/deps/db-4.8.30.NC/build_unix
-OPENSSL_INCLUDE_PATH=C:/deps/openssl-1.1.0h/include
-OPENSSL_LIB_PATH=C:/deps/openssl-1.1.0h
-MINIUPNPC_INCLUDE_PATH=C:/deps
-LIBPNG_INCLUDE_PATH=C:/deps/libpng-1.6.12
-LIBPNG_LIB_PATH=C:/deps/libpng-1.6.12/.libs
-MINIUPNPC_LIB_PATH=C:/deps/miniupnpc
-QRENCODE_INCLUDE_PATH=C:/deps/qrencode-3.4.3
-QRENCODE_LIB_PATH=C:/deps/qrencode-3.4.3/.libs
 
 OBJECTS_DIR = build
 MOC_DIR = build
@@ -149,9 +131,9 @@ SOURCES += src/txdb-leveldb.cpp \
     src/shavite.c \
     src/simd.c \
     src/skein.c \
-    src/fugue.c \
-    src/hamsi.c \
-    src/shabal.c \
+	src/fugue.c \
+	src/hamsi.c \
+	src/shabal.c \
     src/whirlpool.c
 !win32 {
     # we use QMAKE_CXXFLAGS_RELEASE even without RELEASE=1 because we use RELEASE to indicate linking preferences not -O preferences
@@ -196,8 +178,8 @@ contains(USE_O3, 1) {
     QMAKE_CFLAGS += -msse2
 }
 
-#QMAKE_CXXFLAGS_WARN_ON = -fdiagnostics-show-option -Wall -Wextra -Wno-ignored-qualifiers -Wformat -Wformat-security -Wno-unused-parameter -Wstack-protector
-QMAKE_CXXFLAGS_WARN_ON = -fdiagnostics-show-option -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wstack-protector
+QMAKE_CXXFLAGS_WARN_ON = -fdiagnostics-show-option -Wall -Wextra -Wno-ignored-qualifiers -Wformat -Wformat-security -Wno-unused-parameter -Wstack-protector
+
 
 # Input
 DEPENDPATH += src src/json src/qt
@@ -296,10 +278,10 @@ HEADERS += src/qt/bitcoingui.h \
     src/sph_shavite.h \
     src/sph_simd.h \
     src/sph_skein.h \
-    src/sph_fugue.h \
-    src/sph_hamsi.h \
-    src/sph_shabal.h \
-    src/sph_whirlpool.h \
+	src/sph_fugue.h \
+	src/sph_hamsi.h \
+	src/sph_shabal.h \
+	src/sph_whirlpool.h \
     src/sph_types.h \
     src/threadsafety.h \
     src/txdb-leveldb.h
@@ -477,15 +459,13 @@ macx:TARGET = "firecoin-Qt"
 macx:QMAKE_CFLAGS_THREAD += -pthread
 macx:QMAKE_LFLAGS_THREAD += -pthread
 macx:QMAKE_CXXFLAGS_THREAD += -pthread
-macx:QMAKE_INFO_PLIST = share/qt/Info.plist
 
 # Set libraries and includes at end, to use platform-defined defaults if not overridden
-INCLUDEPATH += $$SECP256K1_INCLUDE_PATH $$BOOST_INCLUDE_PATH $$BDB_INCLUDE_PATH $$OPENSSL_INCLUDE_PATH $$QRENCODE_INCLUDE_PATH
-LIBS += $$join(SECP256K1_LIB_PATH,,-L,) $$join(BOOST_LIB_PATH,,-L,) $$join(BDB_LIB_PATH,,-L,) $$join(OPENSSL_LIB_PATH,,-L,) $$join(QRENCODE_LIB_PATH,,-L,)
+INCLUDEPATH += $$BOOST_INCLUDE_PATH $$BDB_INCLUDE_PATH $$OPENSSL_INCLUDE_PATH $$QRENCODE_INCLUDE_PATH
+LIBS += $$join(BOOST_LIB_PATH,,-L,) $$join(BDB_LIB_PATH,,-L,) $$join(OPENSSL_LIB_PATH,,-L,) $$join(QRENCODE_LIB_PATH,,-L,)
 LIBS += -lssl -lcrypto -ldb_cxx$$BDB_LIB_SUFFIX
 # -lgdi32 has to happen after -lcrypto (see  #681)
 windows:LIBS += -lws2_32 -lshlwapi -lmswsock -lole32 -loleaut32 -luuid -lgdi32
-LIBS += -lsecp256k1
 LIBS += -lboost_system$$BOOST_LIB_SUFFIX -lboost_filesystem$$BOOST_LIB_SUFFIX -lboost_program_options$$BOOST_LIB_SUFFIX -lboost_thread$$BOOST_THREAD_LIB_SUFFIX
 windows:LIBS += -lboost_chrono$$BOOST_LIB_SUFFIX
 
@@ -494,11 +474,6 @@ contains(RELEASE, 1) {
         # Linux: turn dynamic linking back on for c/c++ runtime libraries
         LIBS += -Wl,-Bdynamic
     }
-}
-
-!windows:!macx {
-    DEFINES += LINUX
-    LIBS += -lrt -ldl
 }
 
 system($$QMAKE_LRELEASE -silent $$_PRO_FILE_)
