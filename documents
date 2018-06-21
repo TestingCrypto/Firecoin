@@ -1,14 +1,14 @@
 sudo Firecoind -daemon -txindex
-sudo mongo
+sudo mongod --dbpath /home/pcie/.Firecoin
 cd explorer
 sudo npm start
 
-sudo /usr/bin/nodejs scripts/sync.js index update
-sudo /usr/bin/nodejs scripts/sync.js index check
-sudo /usr/bin/nodejs scripts/sync.js index reindex
-sudo /usr/bin/nodejs scripts/sync.js market reindex
+sudo /usr/bin/nodejs /home/pcie/explorer/scripts/sync.js index update
+sudo /usr/bin/nodejs /home/pcie/explorer/scripts/sync.js index check
+sudo /usr/bin/nodejs /home/pcie/explorer/scripts/sync.js index reindex
+sudo /usr/bin/nodejs /home/pcie/explorer/scripts/sync.js market reindex
 
-sudo /usr/bin/nodejs scripts/peers.js index update
-sudo /usr/bin/nodejs scripts/peers.js index check
-sudo /usr/bin/nodejs scripts/peers.js index reindex
-sudo /usr/bin/nodejs scripts/peers.js market reindex
+sudo /usr/bin/nodejs /home/pcie/explorer/scripts/peers.js index update
+sudo /usr/bin/nodejs /home/pcie/explorer/scripts/peers.js index check
+sudo /usr/bin/nodejs /home/pcie/explorer/scripts/peers.js index reindex
+sudo /usr/bin/nodejs /home/pcie/explorer/scripts/peers.js market reindex
