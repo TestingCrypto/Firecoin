@@ -7,9 +7,11 @@ cd explorer
 rm tmp/index.pid
 cd explorer
 crontab -e
-*/1 * * * * cd /path/to/explorer && /usr/bin/nodejs scripts/sync.js index update > /dev/null 2>&1
-*/2 * * * * cd /path/to/explorer && /usr/bin/nodejs scripts/sync.js market > /dev/null 2>&1
-*/5 * * * * cd /path/to/explorer && /usr/bin/nodejs scripts/peers.js > /dev/null 2>&1
+*/1 * * * * cd explorer && /usr/bin/nodejs scripts/sync.js index update > /dev/$
+*/2 * * * * cd explorer && /usr/bin/nodejs scripts/sync.js market > /dev/null 2$
+*/5 * * * * cd explorer && /usr/bin/nodejs scripts/peers.js > /dev/null 2>&1
+@reboot sleep 15; /home/pcie/cryptos/firecoin-4.0/src/Firecoind -daemon -txindex
+@reboot sleep 45; cd explorer && forever start bin/cluster
 Ctrl X
 y
 cd ..
