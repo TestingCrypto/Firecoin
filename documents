@@ -1,5 +1,6 @@
 sudo Firecoind -daemon -txindex
 sudo mongod --dbpath /home/pcie/.Firecoin
+sudo mongo
 cd explorer
 sudo npm start
 
