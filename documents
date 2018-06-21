@@ -4,6 +4,7 @@ sudo mongo
 cd explorer
 sudo npm start
 cd explorer
+rm tmp/index.pid
 sudo node scripts/sync.js index update
 sudo node scripts/sync.js index check
 sudo node scripts/sync.js index reindex
