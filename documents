@@ -5,6 +5,19 @@ cd explorer
 sudo npm start
 cd explorer
 rm tmp/index.pid
+cd explorer
+crontab -e
+*/1 * * * * cd /path/to/explorer && /usr/bin/nodejs scripts/sync.js index update > /dev/null 2>&1
+*/2 * * * * cd /path/to/explorer && /usr/bin/nodejs scripts/sync.js market > /dev/null 2>&1
+*/5 * * * * cd /path/to/explorer && /usr/bin/nodejs scripts/peers.js > /dev/null 2>&1
+Ctrl X
+y
+cd ..
+Ctrl C
+cd explorer
+forever start -c "npm start" ./
+ferever list
+
 sudo node scripts/sync.js index update
 sudo node scripts/sync.js index check
 sudo node scripts/sync.js index reindex
