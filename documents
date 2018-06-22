@@ -12,6 +12,7 @@ crontab -e
 */5 * * * * cd explorer && /usr/bin/nodejs scripts/peers.js > /dev/null 2>&1
 @reboot sleep 15; /home/pcie/cryptos/firecoin-4.0/src/Firecoind -daemon -txindex
 @reboot sleep 45; cd explorer && forever start bin/cluster
+@reboot sleep 45; cd explorer && npm start
 Ctrl X
 y
 cd ..
