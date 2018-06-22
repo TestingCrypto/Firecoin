@@ -456,7 +456,7 @@ int CMerkleTx::SetMerkleBranch(const CBlock* pblock)
 
 
 
-
+// Complex Method  (complexity = 17) src\main.cpp:L460-510
 bool CTransaction::CheckTransaction() const
 {
     // Basic checks that don't depend on any context
@@ -984,10 +984,8 @@ int64_t GetProofOfWorkReward(int64_t nFees)
     {
 		nSubsidy = 5 * COIN;
     }
-	
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfWorkReward() : create=%s nSubsidy=%"PRId64"\n", FormatMoney(nSubsidy).c_str(), nSubsidy);
-	
     return nSubsidy + nFees;
 }
 
@@ -1491,6 +1489,7 @@ bool CBlock::DisconnectBlock(CTxDB& txdb, CBlockIndex* pindex)
     return true;
 }
 
+// Complex Method  (complexity = 27) src\main.cpp:L1494-1666
 bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
 {
     // Check it again in case a previous version let a bad block in, but skip BlockSig checking
@@ -1754,6 +1753,7 @@ bool CBlock::SetBestChainInner(CTxDB& txdb, CBlockIndex *pindexNew)
     return true;
 }
 
+// Complex Method  (complexity = 25) src\main.cpp:L1757-1882
 bool CBlock::SetBestChain(CTxDB& txdb, CBlockIndex* pindexNew)
 {
     uint256 hash = GetHash();
@@ -1876,7 +1876,7 @@ bool CBlock::SetBestChain(CTxDB& txdb, CBlockIndex* pindexNew)
 // total coin age spent in transaction, in the unit of coin-days.
 // Only those coins meeting minimum age requirement counts. As those
 // transactions not in main chain are not currently indexed so we
-// might not find out about their coin age. Older transactions are 
+// might not find out about their coin age. Older transactions are
 // guaranteed to be in main chain by sync-checkpoint. This rule is
 // introduced to help nodes establish a consistent view of the coin
 // age (trust score) of competing branches.
@@ -2010,10 +2010,7 @@ bool CBlock::AddToBlockIndex(unsigned int nFile, unsigned int nBlockPos, const u
     uiInterface.NotifyBlocksChanged();
     return true;
 }
-
-
-
-
+// Complex Method  (complexity = 26) src\main.cpp:L2017-2103
 bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot, bool fCheckSig) const
 {
     // These are checks that are independent of context
@@ -2101,6 +2098,7 @@ bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot, bool fCheckSig) c
     return true;
 }
 
+// Complex Method  (complexity = 26) src\main.cpp:L2104-2192
 bool CBlock::AcceptBlock()
 {
     // Check for duplicate
@@ -3109,7 +3107,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
                     if (inv.hash == pfrom->hashContinue)
                     {
                         // send latest proof-of-work block to allow the
-                        // download node to accept as orphan (proof-of-stake 
+                        // download node to accept as orphan (proof-of-stake
                         // block might be rejected by stake connection check)
                         vector<CInv> vInv;
                         vInv.push_back(CInv(MSG_BLOCK, GetLastBlockIndex(pindexBest, false)->GetBlockHash()));
