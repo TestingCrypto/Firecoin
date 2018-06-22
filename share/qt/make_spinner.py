@@ -9,7 +9,7 @@ from subprocess import Popen
 
 SRC='img/reload_scaled.png'
 DST='../../src/qt/res/movies/update_spinner.mng'
-TMPDIR='/tmp'
+TMPDIR='/tmp'## Probable insecure usage of temp file/directory.  (lines of code = 1)
 TMPNAME='tmp-%03i.png'
 NUMFRAMES=35
 FRAMERATE=10.0
