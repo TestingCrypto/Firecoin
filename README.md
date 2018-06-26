@@ -1,21 +1,21 @@
-FIRE COIN | Wallet Version 4.0.1.0
+FIRE COIN | Wallet Version 4.0.1.0 | Template Website
 ====================
 [![FIRE-Community](http://oi58.tinypic.com/27yy79d.jpg)](http://tech-commons.wix.com/fire-coin-community)
 
 FIRE Information
 ====================
 
-     Ticker: FIRE           | PoW/PoS         | Algorithm:X15    |     Nodes         |     Ports
-    :----------------------:|:---------------:|:----------------:|:-----------------:|:-------------:
-     Genesis Block:         | 2014-06-28      | 03:53:29         |   50.83.11.14     |     49698 
-     Max POW:               | 97,496  FIRE    | -                |   78.46.92.72     |     49697
-     Last PoW Block:        | 2014-07-01      | 01:35:53         |   213.230.101.5   |
-     PoS Starts on Block:   | 4,000           | > 4 Days         |                   |
-     First PoS Block:       | 2014-07-01      | 01:37:03         |                   |
-     PoS Annual Interest:   | 1%              | -                |                   |
-     PoS Minimum Stake Age: | 1 Hours         | 15 Blocks        |                   |
-     Total:                 | 150,000 FIRE    | Years            |                   |
-                            |                 |                  |                   |
+    |Ticker: FIRE           | PoW/PoS         | Algorithm:X15    |     Nodes         |     Ports
+    | --------------------- |:---------------:|:----------------:|:-----------------:| -------------:|
+    |Genesis Block:         | 2014-06-28      | 03:53:29         |   50.83.11.14     |     49698     |
+    |Max POW:               | 97,496  FIRE    | -                |   78.46.92.72     |     49697     |
+    |Last PoW Block:        | 2014-07-01      | 01:35:53         |   213.230.101.5   |               |
+    |PoS Starts on Block:   | 4,000           | > 4 Days         |                   |               |
+    |First PoS Block:       | 2014-07-01      | 01:37:03         |                   |               |
+    |PoS Annual Interest:   | 1%              | -                |                   |               |
+    |PoS Minimum Stake Age: | 1 Hours         | 15 Blocks        |                   |               |
+    |Total:                 | 150,000 FIRE    | Years            |                   |               |
+    |                       |                 |                  |                   |               |
 
 Forums
 ====================
@@ -23,6 +23,7 @@ Forums
 
 Block Explorers
 ====================
+[![Visit our BitCoinTalk Forum](http://oi58.tinypic.com/n3m803.jpg)](http://50.83.11.14:3001)
 
 Faucets
 ====================
