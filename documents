@@ -1,23 +1,38 @@
 sudo Firecoind -daemon -txindex
+sudo Techcoind -daemon -txindex
+
 sudo mongod --dbpath /home/pcie/.Firecoin
+sudo mongod --dbpath /home/pcie/.Techcoin
+
 sudo mongo
-cd explorer
+
+cd fire_explorer
+cd tech_explorer
+
 sudo npm start
-cd explorer
-rm tmp/index.pid
-cd explorer
+
+sudo rm tmp/index.pid
+
 crontab -e
-*/1 * * * * cd explorer && /usr/bin/nodejs scripts/sync.js index update > /dev/$
-*/2 * * * * cd explorer && /usr/bin/nodejs scripts/sync.js market > /dev/null 2$
-*/5 * * * * cd explorer && /usr/bin/nodejs scripts/peers.js > /dev/null 2>&1
-@reboot sleep 15; Firecoind -daemon -txindex
-@reboot sleep 45; cd explorer && forever start bin/cluster
-@reboot sleep 45; cd explorer && npm start
+
+*/1 * * * * cd fire_explorer && /usr/bin/nodejs scripts/sync.js index update > /dev/null 2>&1
+*/2 * * * * cd fire_explorer && /usr/bin/nodejs scripts/sync.js market > /dev/null 2>&1
+*/5 * * * * cd fire_explorer && /usr/bin/nodejs scripts/peers.js > /dev/null 2>&1
+*/30 * * * * cd fire_explorer && /usr/bin/nodejs scripts/mapgetdata.js > /dev/null 2>&1
+*/1 * * * * cd tech_explorer && /usr/bin/nodejs scripts/sync.js index update > /dev/null 2>&1
+*/2 * * * * cd tech_explorer && /usr/bin/nodejs scripts/sync.js market > /dev/null 2>&1
+*/5 * * * * cd tech_explorer && /usr/bin/nodejs scripts/peers.js > /dev/null 2>&1
+*/30 * * * * cd tech_explorer && /usr/bin/nodejs scripts/mapgetdata.js > /dev/null 2>&1
+@reboot sleep 10; sudo Techcoind -daemon -txindex
+@reboot sleep 15; sudo Firecoind -daemon -txindex
+//@reboot sleep 55; cd tech_explorer && sudo npm start
+//@reboot sleep 60; cd fire_explorer && sudo npm start
+
 Ctrl X
 y
 cd ..
 Ctrl C
-cd explorer
+cd fire_explorer
 forever start -c "npm start" ./
 ferever list
 
