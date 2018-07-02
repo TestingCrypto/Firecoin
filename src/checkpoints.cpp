@@ -24,26 +24,26 @@ namespace Checkpoints
     //
     static MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
-            (    0, hashGenesisBlock )
-            (    1, uint256("0x00000ed478b28a511d4a0293a0631ee5d47abe9e1e5392ef91a6205c56eab516"))  //500
-            (    3, uint256("0x0000055a98f971cff970b97556f1fd1de255489ccdb2185244a00b827e25c4f9"))  //2
-            (  201, uint256("0x00000b2bafdb31171adc4844eff1a8c19dcb70b34f738a9155bc239168adda59"))  //17
-            ( 1001, uint256("0x00000ade45b55a0253fee8dbba55861f1ad2112fec4e1dd696dd667fabd5d15b"))  //50
-            ( 2501, uint256("0x000001211d3080ff700cfbcefb93e9c07e45dc37416dc751cc79d2aecde7e72c"))  //5
-            ( 4001, uint256("0x9a3bfde4de7a5d00dc7896a13c782728640b40b11fb5a14598c1bdd5e2b8b677"))  //BBF (PoS)
-            ( 4501, uint256("0xe552b27affe8b646aaced4a719ec7ed83a03a5e56e7d10e913b4a81ec7f68a6c"))
-            ( 5001, uint256("0x9dee571076ff21cd8581248d632200e545845fc8d54d8fc2ed899fc9fedfe8c7"))
-            ( 7501, uint256("0xd63559a967228527d09d872eaa52a2a26ce77bfacde2a8061aada850acaa7d61"))
+            (     0, hashGenesisBlock )
+            (     1, uint256("0x00000ed478b28a511d4a0293a0631ee5d47abe9e1e5392ef91a6205c56eab516"))  //500
+            (     3, uint256("0x0000055a98f971cff970b97556f1fd1de255489ccdb2185244a00b827e25c4f9"))  //2
+            (   201, uint256("0x00000b2bafdb31171adc4844eff1a8c19dcb70b34f738a9155bc239168adda59"))  //17
+            (  1001, uint256("0x00000ade45b55a0253fee8dbba55861f1ad2112fec4e1dd696dd667fabd5d15b"))  //50
+            (  2501, uint256("0x000001211d3080ff700cfbcefb93e9c07e45dc37416dc751cc79d2aecde7e72c"))  //5
+            (  4001, uint256("0x9a3bfde4de7a5d00dc7896a13c782728640b40b11fb5a14598c1bdd5e2b8b677"))  //BBF (PoS)
+            (  4501, uint256("0xe552b27affe8b646aaced4a719ec7ed83a03a5e56e7d10e913b4a81ec7f68a6c"))
+            (  5001, uint256("0x9dee571076ff21cd8581248d632200e545845fc8d54d8fc2ed899fc9fedfe8c7"))
+            (  7501, uint256("0xd63559a967228527d09d872eaa52a2a26ce77bfacde2a8061aada850acaa7d61"))
             ( 10001, uint256("0xa4e0b8cef84c8dfa75ffb40fe50262ae93db8e07d422f1b12cb2f32e27d6dbff"))
             ( 20001, uint256("0xc41b19e34d9513386401cbba9af9a8b1fecb0d6c26ad97f4cdc38f2cc1839765"))
-            (30001, uint256("0xd903f1a63f5f08d9c857a2c4bb3918c15039082996358a400041d3c03993b4c0"))
-            (33072, uint256("0xd8deed81cde616da9731ebc15f3e03a5a1d1803c544a54facab252c3505dfa17"))  //GUI (4.0.0.0)
-            (40001, uint256("0x2b67452554cf6708deaaf491cb3311024899fdfdab70b58dc12984b5ce4606f3"))
-            (50001, uint256("0xe9f76b79c5bb4b299b902a39439d92dc6d711ac1729012720b3b5b62c85236a5"))
-            (60001, uint256("0x81a680814b1165d01caec0232e5b4b5fe3f8d996209cb8204ca6e97476e12f4b"))
-            (70001, uint256("0xefd0ff7e740c66fc76972f949de7ed073c5cf5663e81f9bc24228f29b8180295"))
-            (80001, uint256("0x19b31b8f1d94bb5de84ff3311e892c06a9be6d26d5b96b3ef9b0106838be2de4"))
-            (90001, uint256("0x959eca132828e1de075430e6727a8f4bca0ce252a84668ad2e125d1fc2e42900"))
+            ( 30001, uint256("0xd903f1a63f5f08d9c857a2c4bb3918c15039082996358a400041d3c03993b4c0"))
+            ( 33072, uint256("0xd8deed81cde616da9731ebc15f3e03a5a1d1803c544a54facab252c3505dfa17"))  //GUI (4.0.0.0)
+            ( 40001, uint256("0x2b67452554cf6708deaaf491cb3311024899fdfdab70b58dc12984b5ce4606f3"))
+            ( 50001, uint256("0xe9f76b79c5bb4b299b902a39439d92dc6d711ac1729012720b3b5b62c85236a5"))
+            ( 60001, uint256("0x81a680814b1165d01caec0232e5b4b5fe3f8d996209cb8204ca6e97476e12f4b"))
+            ( 70001, uint256("0xefd0ff7e740c66fc76972f949de7ed073c5cf5663e81f9bc24228f29b8180295"))
+            ( 80001, uint256("0x19b31b8f1d94bb5de84ff3311e892c06a9be6d26d5b96b3ef9b0106838be2de4"))
+            ( 90001, uint256("0x959eca132828e1de075430e6727a8f4bca0ce252a84668ad2e125d1fc2e42900"))
             (100001, uint256("0xb63b1468ea4d184a81bcb991df4185f7b975a943fa76150df3572a8d61de4141"))
             (110001, uint256("0x9e1665993001034d1c51843e0ce9c9125b1a0911d6fefcd2a0ac759427f9e643"))
             (120001, uint256("0x9ce49b6486666a3f6f3caa40d87e300402814fb439b4dd9cae7c3db5f65374f3"))
